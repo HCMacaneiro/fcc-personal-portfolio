@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&family=Libre+Baskerville:wght@400;700&display=swap');
+
+:root {
+  --floral-white: #FFFAF0;
+  --maroon: #800000;
+  --royal-blue: #4169E1;
+  --dim-gray: #696969;
+  --dark-blue: #00008B;
+  --dark-charcoal: #333333;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Universal box sizing with inheritance */
+
+html {
+  box-sizing: border-box;
+  
+  /* Font-size 62.5% for easy rem calculation. 100% = 16px; 62.5% = 10px. This was in the FCC model and it seems to work well. */
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+/* Universal box sizing with inheritance */
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Media query for font size using em for breakpoints */
+/* max-width: Screen size / base font size (16px) = x em */
+
+/* 1200px */
+@media (max-width: 75em) {
+  html {
+    font-size: 60%;
+  }
+}
+
+/* 900px */
+@media (max-width: 56.25em) {
+  html {
+    font-size: 57%;
+  }
+}
+
+/* 600px */
+@media (max-width: 37.5em) {
+  html {
+    font-size: 54%;
+  }
+}
+
+
+/* Base styles */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--floral-white);
+}
+
+h1, h2 {
+  font-family: 'Libre Baskerville';
+}
+
+h1 {
+  font-size: 6rem;
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--floral-white);
+}
+
+img {
+  width: 100%;
+}
+
+/* Nav */
+
+#navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 2rem;
+  background-color: var(--maroon);
+  z-index: 1;
+  box-shadow: 0 2px 5px black;
+}
+
+.nav-list {
+  display: flex;
+  padding: 2rem;
+}
+
+.nav-link {
+  padding: 2rem;
+}
+
+.nav-link:hover {
+  color: black;
+}
+
+/* Welcome section */
+
+#welcome-section {
+  background-image: linear-gradient(to bottom right, var(--dim-gray) 0%, black 100%);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+#welcome-section p {
+  font-size: 3rem;
+  font-style: italic;
+  color: #DC143C;
+}
+
+/*Projects section*/
+
+#projects {
+  background-image: linear-gradient(var(--royal-blue) 0%, var(--dark-blue) 100%);
+  text-align: center;
+  padding: 10rem 2rem;
+}
+
+.project-section-header {
+  margin: 0 auto 6rem;
+  text-decoration: underline;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-gap: 4rem;
+  margin: 0 auto 6rem;
+}
+
+.project-tile {
+  box-shadow: 1px 1px 1px 1px black;
+  background-color: var(--dark-charcoal);
+}
+
+.project-title {
+  font-size: 2rem;
+  padding: 1rem;
+}
+
+.code {
+  color: var(--dark-charcoal);
+  transition: color 0.3s ease-out;
+}
+
+.project-tile:hover .code {
+  color: #ff8c69;
+}
+
+/* Contact section */
+
+#contact-section {
+  background-image: linear-gradient(to bottom right, var(--dim-gray) 0%, black 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 75vh;
+  width: 100%;
+}
+
+.contact-section-header p {
+  font-size: 1.5rem;
+  color: #DC143C;
+  margin-bottom: 2rem;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.contact-details {
+  font-size: 2rem;
+  text-shadow: 2px 2px 1px black;
+  transition: color, transform 0.3s ease-in-out;
+}
+
+.contact-details:hover {
+  color: var(--royal-blue);
+  transform: translateY(6px)
+}
+
+/* Footer */
+
+footer {
+  background-image: linear-gradient(to bottom right, var(--dim-gray) 0%, black 100%);
+  border-top: 3px double var(--maroon);
+  height: 15vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 56.25em) {
+  footer {
+    margin-bottom: 55px;
+  }
+}
